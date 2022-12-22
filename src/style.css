@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 235.38px;
+    height: 102px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider::before {
+    position: absolute;
+    z-index: 1;
+    content: "";
+    height: 86.31px;
+    width: 86.31px;
+    left: 8px;
+    bottom: 8px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #111;
+}
+
+input:checked + .slider::before {
+    -webkit-transform: translateX(132px);
+    -ms-transform: translateX(132px);
+    transform: translateX(132px)
+}
+
+.slider.round {
+    border-radius: 50px;
+}
+
+.slider.round::before {
+    border-radius: 50%;
+}
+
+.switch img:first-child {
+    position: absolute;
+
+    cursor: pointer;
+
+    z-index: 1;
+    width: 86.31px;
+    height: 86.31px;
+
+    left: 8px;
+    bottom: 8px;
+}
+
+.switch img[alt="sun"] {
+    position: absolute;
+
+    cursor: pointer;
+
+    z-index: 0;
+    width: 86.31px;
+    height: 86.31px;
+
+    right: 8px;
+    bottom: 8px;
+}
